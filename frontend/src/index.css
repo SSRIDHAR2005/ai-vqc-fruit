@@ -1,3 +1,51 @@
+/* ==========================================================================
+   AI VQC — Global tokens & reset
+   ========================================================================== */
+
+:root {
+  /* --- Palette --- */
+  --color-bg: #F1F4EF;
+  --color-bg-alt: #E7ECE3;
+  --color-surface: #FFFFFF;
+  --color-surface-sunken: #F7F8F4;
+
+  --color-ink: #142620;
+  --color-ink-soft: #4C5C54;
+  --color-ink-faint: #8B978F;
+  --color-border: #DDE3D8;
+  --color-border-strong: #C4CDBE;
+
+  --color-primary: #1F6B4A;
+  --color-primary-dark: #123D2A;
+  --color-primary-light: #E4EFE6;
+  --color-quantum: #3B4FE0;
+  --color-quantum-light: #E7E9FC;
+
+  --color-good: #2E9E5B;
+  --color-good-bg: #E5F5EA;
+  --color-moderate: #C9820F;
+  --color-moderate-bg: #FBF0DC;
+  --color-bad: #C4453D;
+  --color-bad-bg: #FBE7E5;
+  --color-uncertain: #6B7A72;
+  --color-uncertain-bg: #EBEEE9;
+
+  /* --- Type --- */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* --- Elevation / radius --- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px -2px rgba(18, 38, 30, 0.08);
+  --shadow-md: 0 16px 40px -20px rgba(18, 38, 30, 0.35);
+  --shadow-lg: 0 30px 70px -25px rgba(18, 38, 30, 0.45);
+
+  color-scheme: light;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,4 +55,41 @@
 html, body, #root {
   height: 100%;
   width: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-quantum);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
